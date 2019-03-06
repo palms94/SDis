@@ -1,0 +1,25 @@
+INDEX VERSION 1.131+C:\Users\drago\Desktop\School\SD\Lab3\ttt-local\.metadata\.plugins\org.eclipse.jdt.core
+824667564.index
+67794888.index
+2476970914.index
+2838874378.index
+2014907063.index
+1168261627.index
+18493794.index
+1666294170.index
+136295869.index
+1099852350.index
+2461411560.index
+3978667933.index
+2519803222.index
+3185729988.index
+1783137262.index
+3766187667.index
+42343198.index
+2775276503.index
+262142283.index
+1528707101.index
+4274147836.index
+1995573773.index
+2130621361.index
+668260412.index
