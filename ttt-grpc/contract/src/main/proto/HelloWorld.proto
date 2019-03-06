@@ -1,0 +1,30 @@
+//
+// Protocol buffers definition for TTT
+//
+syntax = "proto3";
+package example.grpc;
+
+// Request payload
+message Player1 {
+  // Each message attribute is strongly typed.
+  // You also must assign a "tag" number.
+  // Each tag number is unique within the message.
+  string play1 = 1;
+
+  // This defines a strongly typed list of String
+  repeated string hobbies = 2;
+
+  // There are many more basics types, like Enum, Map
+  // See https://developers.google.com/protocol-buffers/docs/proto3
+  // for more information.
+}
+
+message Player2 {
+  string play2 = 1;
+}
+
+// Defining a Service, a Service can have multiple RPC operations
+service TTTService {
+  // Define a RPC operation
+  rpc play1(Player1) returns (Player2);
+}
