@@ -10,6 +10,8 @@
 
 	<name>${project.artifactId}</name>
 
+		
+	
 	<properties>
 		<!-- compiler properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,7 +32,7 @@
 		<!-- contract brings gRPC dependencies with it -->
 		<dependency>
 			<groupId>example.grpc</groupId>
-			<artifactId>game-contract</artifactId>
+			<artifactId>ttt-local-contract</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<!-- JUnit -->
