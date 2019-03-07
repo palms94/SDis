@@ -1,0 +1,5 @@
+package exemple.grpc.client;
+
+public class GameClient {
+
+}

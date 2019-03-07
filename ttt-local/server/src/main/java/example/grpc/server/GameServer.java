@@ -23,7 +23,7 @@ public class GameServer {
 		}
 
 		final int port = Integer.parseInt(args[0]);
-		final BindableService impl = new HelloWorldServiceImpl();
+		final BindableService impl = (BindableService) new TTTServiceImpl();
 
 		// Create a new server to listen on port
 		Server server = ServerBuilder.forPort(port).addService(impl).build();
