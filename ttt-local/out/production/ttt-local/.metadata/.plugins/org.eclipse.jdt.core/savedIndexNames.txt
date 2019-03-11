@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+C:\Users\drago\Desktop\School\SD\Lab3\ttt-local\.metadata\.plugins\org.eclipse.jdt.core
+1099852350.index
+2461411560.index
+1783137262.index
+2775276503.index
+262142283.index
+4274147836.index

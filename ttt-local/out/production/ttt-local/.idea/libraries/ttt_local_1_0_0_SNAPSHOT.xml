@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ttt-local-1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/client/target/ttt-local-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,5 @@
+package contract.src.main.proto;
+
+public class Game {
+
+}

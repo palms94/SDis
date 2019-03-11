@@ -1,30 +1,29 @@
-package example.grpc.server;
+package example.grpc;
+
+import example.grpc.Game;
+import example.grpc.TTTServiceGrpc;
+import example.grpc.TTTServiceImplBase;
 
 import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import ttt.TTT;
+import example.grpc.TTT;
+import io.grpc.stub.StreamObserver;
+
 
 //public class GameServiceImpl extends GameServiceGrpc.GameImplBase {
-public class TTTServiceImpl extends TTTGrpc.TTTImplBase {
+public class TTTServiceImpl extends TTTServiceGrpc.TTTServiceImplBase {
 	private TTT ttt = new TTT();
 	
 	@Override
-	public void play(Game.PlayRequest request, StreamObserver<Game.PlayRequest> responseObserver) {
+	
 
-		// HelloRequest has auto-generated toString method that shows its contents
-		System.out.println(request);
-
-		// You must use a builder to construct a new Protobuffer object
-		Game.PlayResponse response = Game.PlayResponse.newBuilder()
-				.setPlay(request.getName()).build();
-
-		// Use responseObserver to send a single response back
-		responseObserver.onNext(response);
-
-		// When you are done, you must call onCompleted
-		responseObserver.onCompleted();
-	}
+		public void currentBoard(CurrentBoardRequest request, StreamObserver<CurrentBoardResponse> responseObserver) {
+			CurrentBoardResponse response = CurrentBoardResponse.newBuilder().setBoard(ttt.currentBoard()).build();
+			responseObserver.onNext(response);
+			responseObserver.onCompleted();
+		}
+	
 		
 	@Override
 	public void check(CheckWinnerRequest request, StreamObserver<CheckWinnerResponse> responseObserver) {
