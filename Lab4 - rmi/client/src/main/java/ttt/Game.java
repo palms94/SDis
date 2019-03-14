@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 /** This is the client of the Tic Tac Toe game. */
 public class Game {
-	TTT ttt;
+	TTTService ttt;
 	Scanner keyboardSc;
 	int winner = 0;
 	int player = 1;
 
 	public Game() throws RemoteException, MalformedURLException, NotBoundException {
-		ttt = (TTT) Naming.lookup("TTT");
+		ttt = (TTTService) Naming.lookup("TTT");
 		keyboardSc = new Scanner(System.in);
 	}
 
