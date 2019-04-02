@@ -1,0 +1,30 @@
+package com.forkexec.rst.domain;
+
+public class Meal {
+	private String type;
+	private String description;
+
+	public Meal(String type, String description) {
+		this.type = type;
+		this.description = description;
+	}
+
+	public String getType() {
+		return type;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Meal [Type=").append(type);
+		builder.append(", description=").append(description);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}
+

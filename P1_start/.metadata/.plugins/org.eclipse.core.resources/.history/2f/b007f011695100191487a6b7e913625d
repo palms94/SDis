@@ -1,0 +1,5 @@
+package com.forkexec.rst.ws;
+
+public class MenuOrder {
+
+}

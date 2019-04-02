@@ -1,0 +1,29 @@
+package com.forkexec.rst.domain;
+
+public class Menu {
+	private String menuId;
+	private String description;
+
+	public Menu(String mid, String description) {
+		this.menuId = mid;
+		this.description = description;
+	}
+
+	public String getMenu() {
+		return menuId;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Menu [menuId=").append(menuId);
+		builder.append(", description=").append(description);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.forkexec.rst.domain;
+
+public class Meal {
+
+}
