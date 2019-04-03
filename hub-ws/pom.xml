@@ -47,6 +47,7 @@
 			<artifactId>uddi-naming</artifactId>
 			<version>${version.uddi-naming}</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -70,9 +70,7 @@ public class PointsPortImpl implements PointsPortType {
             if(pointsToAdd < 0) {
                 throwInvalidPointsFault_Exception("Pontos negativos");
             }
-                int pontos = user.getUserPoints();
-                pontos += pointsToAdd;
-                return pontos;
+                points.addPoints(userEmail,pointsToAdd);
 
             }
         return -1;
@@ -92,9 +90,7 @@ public class PointsPortImpl implements PointsPortType {
                 if(pointsToSpend > user.getUserPoints()) {
                     throwNotEnoughBalanceFault_Exception("Pontos negativos");
                 }
-                    int pontos = user.getUserPoints();
-                    pontos -= pointsToSpend;
-                    return pontos;
+                   points.spendPoints(pointsToSpend);
 
                 }
                 return -1;

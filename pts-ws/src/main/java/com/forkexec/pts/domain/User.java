@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class User {
 
     private String userEmail;
-    private int ID;
+    private String userId;
     private int userPoints;
 
     public User(String userEmail){
@@ -16,17 +16,17 @@ public class User {
 
     }
 
-    public User(String userEmail, int userID){
+    public User(String userEmail, String userID){
         this.userEmail = userEmail;
-        this.ID = userID;
+        this.userId = userID;
     }
 
     public String getUserEmail() {
         return userEmail;
     }
 
-    public int getUserId() {
-        return ID;
+    public String getUserId() {
+        return userId;
     }
 
     public int getUserPoints(){
@@ -52,7 +52,7 @@ public class User {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("[ email").append(userEmail);
-        builder.append(", id=").append(ID);
+        builder.append(", id=").append(userId);
         builder.append(", pontos=").append(userPoints);
         builder.append("]");
         return builder.toString();

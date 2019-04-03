@@ -43,18 +43,24 @@ public class Points {
         return SingletonHolder.INSTANCE;
     }
 
-   /* public static void addPoints(String userEmail, int pointsToAdd){
+    public void addPoints(String userEmail, int pointsToAdd){
         for (User user : userList)
             if (userEmail.equals(user.getUserEmail())) {
-                user.getUserPoints() += pointsToAdd;
+                    int pontos = user.getUserPoints();
+                    pontos += pointsToAdd;
+
             }
 
     }
 
-    public static void spendPoints(int pointsToSpend){
-
+    public  void spendPoints(int pointsToSpend){
+        for (User user : userList)
+            if (userEmail.equals(user.getUserEmail())) {
+                int pontos = user.getUserPoints();
+                pontos -= pointsToSpend;
+            }
     }
-*/
+
     public List<User> getUserList() {
         return userList;
     }

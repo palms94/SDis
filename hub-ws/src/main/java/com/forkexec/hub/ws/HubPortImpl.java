@@ -5,6 +5,8 @@ import java.util.List;
 import javax.jws.WebService;
 
 import com.forkexec.pts.domain.User;
+import com.forkexec.pts.domain.Points;
+import
 
 /**
  * This class implements the Web Service port type (interface). The annotations
@@ -15,8 +17,8 @@ import com.forkexec.pts.domain.User;
             name ="HubWebService",
             portName = "HubPort",
             targetNamespace="http://ws.hub.forkexec.com/",
-            serviceName = "HubService"
-)
+            serviceName = "HubService")
+
 public class HubPortImpl implements HubPortType {
 
 	/**
@@ -25,6 +27,7 @@ public class HubPortImpl implements HubPortType {
 	 */
 	private HubEndpointManager endpointManager;
     User user;
+    Points points;
 	/** Constructor receives a reference to the endpoint manager. */
 	public HubPortImpl(HubEndpointManager endpointManager) {
 		this.endpointManager = endpointManager;
@@ -34,19 +37,40 @@ public class HubPortImpl implements HubPortType {
 	
 	@Override
 	public void activateAccount(String userId) throws InvalidUserIdFault_Exception {
-		// TODO Auto-generated method stub
-		
-	}
+        // TODO Auto-generated method stub
+        for (User user : points.getUserList()) {
+            if (!userId.equals(user.getUserId())) {
+                throwInvalidUserIdFault_Exception("Formato incorrecto");
+            }
+            user = new User(userId);
 
+        }
+    }
 	@Override
 	public void loadAccount(String userId, int moneyToAdd, String creditCardNumber)
 			throws InvalidCreditCardFault_Exception, InvalidMoneyFault_Exception, InvalidUserIdFault_Exception {
-		// TODO Auto-generated method stub
-        for (user.getIDs())
-            if (user.getIDs().contains(userId))
+            // TODO Auto-generated method stub
+            for (User user : points.getUserList()) {
+                if (!userId.equals(user.getUserId())) {
+                    throwInvalidUserIdFault_Exception("Formato incorrecto");
+                }
+                if (moneyToAdd != 10 || moneyToAdd != 20 || moneyToAdd != 30 || moneyToAdd != 50){
+                    throwInvalidMoneyFault_Exception("Quantia invalida");
+                }
+            //TODO    if (CARTAOCREDITO EXCEPCAO
+                if(userId.equals(user.getUserId()){
+                    if(moneyToAdd == 10)
+                        Points.getInstance().addPoints(user.getUserEmail(),1000);
+                    if(moneyToAdd == 20)
+                        Points.getInstance().addPoints(user.getUserEmail(),2100);
+                    if(moneyToAdd == 30)
+                        Points.getInstance().addPoints(user.getUserEmail(),3300);
+                    if(moneyToAdd == 50)
+                        Points.getInstance().addPoints(user.getUserEmail(),5500);
 
-		
-	}
+            }
+
+        }
 	
 	
 	@Override
@@ -137,6 +161,7 @@ public class HubPortImpl implements HubPortType {
 		// TODO Auto-generated method stub
 		
 	}
+    }
 
 
 
@@ -157,10 +182,28 @@ public class HubPortImpl implements HubPortType {
 	// Exception helpers -----------------------------------------------------
 
 	/** Helper to throw a new BadInit exception. */
-//	private void throwBadInit(final String message) throws BadInitFault_Exception {
-//		BadInitFault faultInfo = new BadInitFault();
-//		faultInfo.message = message;
-//		throw new BadInitFault_Exception(message, faultInfo);
-//	}
+	private void throwBadInit(final String message) throws BadInitFault_Exception {
+	BadInitFault faultInfo = new BadInitFault();
+	faultInfo.message = message;
+	throw new BadInitFault_Exception(message, faultInfo);
+    }
+
+    private void throwInvalidUserIdFault_Exception(final String message) throws InvalidUserIdFault_Exception {
+        InvalidUserIdFault_Exception faultInfo = new InvalidUserIdFault_Exception();
+        faultInfo.message = message;
+        throw new InvalidUserIdFault_Exception(message, faultInfo);
+    }
+
+    private void throwInvalidMoneyFault_Exception(final String message) throws InvalidMoneyFault_Exception {
+        InvalidMoneyFault_Exception faultInfo = new InvalidMoneyFault_Exception();
+        faultInfo.message = message;
+        throw new InvalidMoneyFault_Exception(message, faultInfo);
+    }
+
+    private void throwInvalidCreditCardFault_Exception(final String message) throws InvalidCreditCardFault_Exception {
+        InvalidCreditCardFault_Exception faultInfo = new InvalidCreditCardFault_Exception();
+        faultInfo.message = message;
+        throw new InvalidCreditCardFault_Exception(message, faultInfo);
+    }
 
 }
