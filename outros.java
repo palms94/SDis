@@ -1,4 +1,4 @@
-public List<Food> searchDeal(String description) throws InvalidTextFault_Exception {
+	public List<Food> searchDeal(String description) throws InvalidTextFault_Exception {
 		// TODO return lowest price menus first
 		if(description == null)
 			InvalidTextFault_Exception("Texto de pesquisa não pode ser vazio");
@@ -30,7 +30,10 @@ public List<Food> searchDeal(String description) throws InvalidTextFault_Excepti
 	/*devolve entrada, prato principal ou sobremesa com a descrição
 		sort crescente tempo
 	 */
-	@Override
+	
+	
+	
+	
 	public List<Food> searchHungry(String description) throws InvalidTextFault_Exception {
 		// TODO return lowest preparation time first
 		if (description == null)
